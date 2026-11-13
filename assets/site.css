@@ -35,12 +35,16 @@ a:hover { color: var(--cream); }
   opacity: 0; transform: translateY(8px);
   animation: rise 1s ease-out 1.25s forwards;
 }
-.tagline, .soon { margin: 0; opacity: 0; animation: fade 1.2s ease-out forwards; }
+.tagline, .soon, .store { margin: 0; opacity: 0; animation: fade 1.2s ease-out forwards; }
 .tagline { margin-top: 3.2vh; font-style: italic; font-size: clamp(18px, 2.4vw, 26px); animation-delay: 2.3s; }
 .soon {
   margin-top: 1.6vh; font-size: clamp(12px, 1.3vw, 14px); letter-spacing: .32em; text-transform: uppercase;
-  color: var(--gold); animation-delay: 2.9s;
+  color: var(--gold); animation-delay: 3s;
 }
+.store { display: inline-block; margin-top: 3vh; animation-delay: 2.7s; border-radius: 12px; transition: transform .2s ease; }
+.store img { display: block; width: 180px; height: auto; }
+.store:hover { transform: translateY(-1px); }
+.store:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
 @keyframes rise { to { opacity: 1; transform: translateY(0); } }
 @keyframes fade { to { opacity: 1; } }
 
@@ -68,5 +72,5 @@ footer a:hover { color: var(--cream); }
 footer .copy { display: block; margin-top: 8px; font-size: 13px; opacity: .7; }
 
 @media (prefers-reduced-motion: reduce) {
-  .lantern, .title, .tagline, .soon, footer { animation: none; opacity: 1; transform: none; }
+  .lantern, .title, .tagline, .soon, .store, footer { animation: none; opacity: 1; transform: none; }
 }
