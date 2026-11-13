@@ -38,13 +38,21 @@ a:hover { color: var(--cream); }
 .tagline, .soon, .store { margin: 0; opacity: 0; animation: fade 1.2s ease-out forwards; }
 .tagline { margin-top: 3.2vh; font-style: italic; font-size: clamp(18px, 2.4vw, 26px); animation-delay: 2.3s; }
 .soon {
-  margin-top: 1.6vh; font-size: clamp(12px, 1.3vw, 14px); letter-spacing: .32em; text-transform: uppercase;
+  margin-top: 2.4vh; font-size: clamp(12px, 1.3vw, 14px); letter-spacing: .32em; text-transform: uppercase;
   color: var(--gold); animation-delay: 3s;
 }
-.store { display: inline-block; margin-top: 3vh; animation-delay: 2.7s; border-radius: 12px; transition: transform .2s ease; }
-.store img { display: block; width: 180px; height: auto; }
-.store:hover { transform: translateY(-1px); }
-.store:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+.store {
+  display: inline-flex; align-items: center; gap: 12px; margin-top: 3.4vh; padding: 11px 26px 11px 20px;
+  border: 1px solid var(--gold); border-radius: 14px; background: rgba(201,161,90,.08);
+  color: var(--cream); text-decoration: none; animation-delay: 2.7s;
+  box-shadow: 0 0 28px rgba(201,161,90,.18);
+  transition: background .25s ease, box-shadow .25s ease, transform .25s ease, color .25s ease;
+}
+.store:hover { background: var(--gold); color: var(--charcoal); box-shadow: 0 0 36px rgba(201,161,90,.4); transform: translateY(-1px); }
+.store:focus-visible { outline: 2px solid var(--cream); outline-offset: 4px; }
+.store .apple { width: 26px; height: 26px; flex: none; }
+.store .label { display: flex; flex-direction: column; align-items: flex-start; font-size: 23px; line-height: 1.05; letter-spacing: .01em; }
+.store small { font-size: 12px; letter-spacing: .06em; opacity: .85; margin-bottom: 2px; }
 @keyframes rise { to { opacity: 1; transform: translateY(0); } }
 @keyframes fade { to { opacity: 1; } }
 
